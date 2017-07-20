@@ -4,6 +4,7 @@ pipeline {
     stages {
 	stage('Checkout') {
 	    steps {
+                sh('mkdir /home/jenkins/workspace')
 		checkout scm
 	    }
 	}

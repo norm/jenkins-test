@@ -1,13 +1,13 @@
 pipeline {
     agent { label 'docker-slave' }
 
-    stage('Checkout') {
-	steps {
-	    checkout scm
-	}
-    }
-
     stages {
+	stage('Checkout') {
+	    steps {
+		checkout scm
+	    }
+	}
+
         stage('Test') {
             steps {
                 sh('tests.sh')
